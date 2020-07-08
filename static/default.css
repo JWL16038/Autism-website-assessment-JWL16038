@@ -1,0 +1,39 @@
+*{
+    font-family: Lato;
+    box-sizing:border-box;
+
+}
+
+body{
+    background-color: cadetblue;
+
+}
+
+nav{
+    text-align:right;
+    padding-top: 10px;
+    padding-right: 40px;
+    color:goldenrod;
+    font-size:2rem;
+    text-space: 2rem;
+}
+a{
+    color:lightskyblue;
+    text-decoration: none;
+    border: 1px double green;
+}
+
+a:visited{
+    color:darkkhaki;
+}
+
+
+h1{
+    color:darksalmon;
+    font-weight: bolder;
+}
+
+.container{
+
+
+}
