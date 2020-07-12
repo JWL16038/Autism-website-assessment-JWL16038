@@ -11,12 +11,22 @@ body{
 
 nav{
     text-align:right;
-    padding-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 4px;
     padding-right: 40px;
     color:goldenrod;
     font-size:2rem;
     text-space: 2rem;
 }
+hr{
+    color:deeppink;
+    height:2px;
+}
+
+img{
+    max-width: 100%;
+}
+
 a{
     color:lightskyblue;
     text-decoration: none;
@@ -33,7 +43,46 @@ h1{
     font-weight: bolder;
 }
 
-.container{
+h3{
+    font-size: large;
+    padding-left: 25px;
+}
+h4{
+    font-size: medium;
+    padding-left: 25px;
+}
+.caregivers_box{
+    background-color: steelblue;
+    width:32%;
+    text-align: center;
+    color: white;
+    border-style: solid;
+    padding:1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left:10px;
+    float: left;
+}
+.caregivers_box_name h3{
+    font-size: 40px;
+}
 
+.caregivers_box_image{
+    width:300px;
+    height:300px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    align-content: center;
+    overflow: hidden;
+}
 
+.caregivers_box_desc{
+    padding: 0.5rem;
+}
+.caregivers_box_desc a{
+    font-size: xx-large;
+    color:yellow;
+    text-decoration: none;
+    border: 5px solid lightskyblue;
 }
