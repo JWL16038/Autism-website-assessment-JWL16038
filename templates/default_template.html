@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Autism website DTS project 2020</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"/>
-    <link href="{{ url_for('static', filename='default.css') }}" rel="stylesheet">
-</head>
-<body>
-<div class="container">
-    <header>
-        {% block header %}
-        {% endblock %}
-    </header>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/aboutus">About us</a>
-        <a href="/caregivers">Our Caregivers</a>
-        <a href="/resources">Resources</a>
-        <a href="/contact">Contact us</a>
-        <a href="/signup">Sign up</a>
-        <a href="/login">Login</a>
-    </nav>
-    <hr>
-    <footer>
-        {% block footer %}
-        {% endblock %}
-    </footer>
-    <hr>
-    <main>
-        {% block main %}
-        {% endblock %}
-    </main>
-</div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Autism website DTS project 2020</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"/>
+        <link href="{{ url_for('static', filename='default.css') }}" rel="stylesheet">
+    </head>
+    <body>
+    <div class="container">
+        <header>
+            <div class="header">
+                {% block header %}
+                {% endblock %}
+            </div>
+        </header>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
+        <nav>
+            <div class="nav-right">
+                <a href="/">Home</a>
+                <a href="/aboutus">About us</a>
+                <a href="/caregivers">Our Caregivers</a>
+                <a href="/resources">Resources</a>
+                <a href="/contact">Contact us</a>
+                <a href="/signup">Sign up</a>
+                <a href="/login">Login</a>
+            </div>
+            <div class="nav-bottom">
+                {% block navigation %}
+                {% endblock %}
+            </div>
+        </nav>
+
+        <main>
+            <div class="main">
+                {% block main %}
+                {% endblock %}
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer">
+                {% block footer %}
+                {% endblock %}
+            </div>
+        </footer>
+    </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
 </html>

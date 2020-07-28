@@ -43,6 +43,10 @@ h1{
     font-weight: bolder;
 }
 
+h2{
+    font-size: xx-large;
+}
+
 h3{
     font-size: large;
     padding-left: 25px;
@@ -86,4 +90,10 @@ h4{
     color:yellow;
     text-decoration: none;
     border: 5px solid lightskyblue;
+}
+
+
+.signupButtons{
+    text-align: center;
+    font-size: xx-large;
 }
