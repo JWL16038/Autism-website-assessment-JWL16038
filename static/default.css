@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: cadetblue;
+    background-color: lightcyan;
 
 }
 
@@ -50,6 +50,7 @@ h3{
 h4{
     font-size: medium;
     padding-left: 25px;
+    float:right;
 }
 .caregivers_box{
     background-color: steelblue;
