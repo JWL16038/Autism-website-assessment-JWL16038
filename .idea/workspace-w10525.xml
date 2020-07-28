@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="483e763e-a3cc-466a-b0cb-a2694938320b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aboutus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="JWL16038" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dYUDwN1uNh2W3QfgSyFjGV1mLO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.Autism website venv - SCHOOL USE">
+    <configuration name="Autism website venv - HOME USE" type="PythonConfigurationType" factoryName="Python">
+      <module name="Autism website assessment - JWL16038" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\mcser\OneDrive - Wellington College\Documents\13DTS\PyCharm projects\Autism website assessment - JWL16038\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Autism website venv - SCHOOL USE" type="PythonConfigurationType" factoryName="Python">
+      <module name="Autism website assessment - JWL16038" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\16038\OneDrive - Wellington College\Documents\13DTS\PyCharm projects\learning-flask-JWL16038\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Autism website venv - HOME USE" />
+      <item itemvalue="Python.Autism website venv - SCHOOL USE" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="483e763e-a3cc-466a-b0cb-a2694938320b" name="Default Changelist" comment="" />
+      <created>1592601403323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592601403323</updated>
+      <workItem from="1592601406249" duration="2013000" />
+      <workItem from="1592724617473" duration="166000" />
+      <workItem from="1592724800280" duration="30000" />
+      <workItem from="1592724839467" duration="673000" />
+      <workItem from="1592789900903" duration="507000" />
+      <workItem from="1592810028436" duration="635000" />
+      <workItem from="1592897253477" duration="595000" />
+      <workItem from="1592937369436" duration="1172000" />
+      <workItem from="1592975834950" duration="304000" />
+      <workItem from="1593238698732" duration="1477000" />
+      <workItem from="1593301752813" duration="599000" />
+      <workItem from="1593894372022" duration="323000" />
+      <workItem from="1593915795414" duration="2370000" />
+      <workItem from="1593936134920" duration="1202000" />
+      <workItem from="1594010034186" duration="1442000" />
+      <workItem from="1594022923309" duration="709000" />
+      <workItem from="1594071018345" duration="2422000" />
+      <workItem from="1594161897126" duration="595000" />
+      <workItem from="1594181590822" duration="3771000" />
+      <workItem from="1594189611267" duration="696000" />
+      <workItem from="1594257286334" duration="7474000" />
+      <workItem from="1594335329667" duration="319000" />
+      <workItem from="1594339858782" duration="1799000" />
+      <workItem from="1594354403769" duration="1197000" />
+      <workItem from="1594427458208" duration="1360000" />
+      <workItem from="1594435119665" duration="6492000" />
+      <workItem from="1594498693329" duration="1371000" />
+      <workItem from="1594539453361" duration="1422000" />
+      <workItem from="1594611794662" duration="313000" />
+      <workItem from="1594672554379" duration="2758000" />
+      <workItem from="1594788924550" duration="3119000" />
+      <workItem from="1594796755029" duration="612000" />
+      <workItem from="1594927228269" duration="735000" />
+      <workItem from="1595100481767" duration="848000" />
+      <workItem from="1595208724490" duration="2113000" />
+      <workItem from="1595300516416" duration="779000" />
+      <workItem from="1595461355913" duration="1318000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit for this project to Github">
+      <created>1592601675858</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592601675858</updated>
+    </task>
+    <task id="LOCAL-00002" summary="First build for the main menu with functioning HTML &amp; CSS">
+      <created>1594187732341</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594187732341</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Basic caregivers page working. Beginning to build the homepage screen.">
+      <created>1594514260657</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594514260657</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="First commit for this project to Github" />
+    <MESSAGE value="First build for the main menu with functioning HTML &amp; CSS" />
+    <MESSAGE value="Basic caregivers page working. Beginning to build the homepage screen." />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic caregivers page working. Beginning to build the homepage screen." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="725" y="367" key="#Notifications" timestamp="1592724784302">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="725" y="367" key="#Notifications/0.0.1680.1010@0.0.1680.1010" timestamp="1592724784302" />
+    <state x="294" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594499039934">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="280" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1592790404978" />
+    <state x="294" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1594499039934" />
+    <state x="0" y="613" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594429065463">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="0" y="613" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1594429065463" />
+    <state x="872" y="455" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594271908166">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="872" y="455" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1594271908166" />
+    <state x="272" y="82" key="CommitChangelistDialog2" timestamp="1594514257144">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="272" y="82" key="CommitChangelistDialog2/0.0.1680.1010@0.0.1680.1010" timestamp="1594514257144" />
+    <state x="88" y="78" width="1425" height="704" key="DiffContextDialog" timestamp="1595209722259">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="88" y="78" width="1425" height="704" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1595209722259" />
+    <state x="92" y="92" width="1496" height="826" key="DiffContextDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1594791643831" />
+    <state x="590" y="221" key="FileChooserDialogImpl" timestamp="1592790290501">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="590" y="221" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1592790290501" />
+    <state x="620" y="259" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1592608989928" />
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1595464317935">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595464317935" />
+    <state width="1637" height="268" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1594794440021" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1595464317935">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1595464317935" />
+    <state width="1637" height="268" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1594794440021" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1595464317935">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1595464317935" />
+    <state width="1637" height="268" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1594794440021" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1595464317935">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1595464317935" />
+    <state width="1637" height="268" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1594794440021" />
+    <state width="1637" height="335" key="GridCell.Tab.1.bottom" timestamp="1594456826656">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="335" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1594456826656" />
+    <state width="1637" height="335" key="GridCell.Tab.1.center" timestamp="1594456826656">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="335" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1594456826656" />
+    <state width="1637" height="335" key="GridCell.Tab.1.left" timestamp="1594456826656">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="335" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1594456826656" />
+    <state width="1637" height="335" key="GridCell.Tab.1.right" timestamp="1594456826656">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="335" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1594456826656" />
+    <state x="325" y="127" key="SettingsEditor" timestamp="1592790397339">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="325" y="127" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1592790397339" />
+    <state x="341" y="149" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1592601527121" />
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1594514272647">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1594514272647" />
+    <state x="0" y="418" width="587" height="592" key="find.popup" timestamp="1594258496061">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="0" y="418" width="587" height="592" key="find.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1594258496061" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Autism_website_assessment___JWL16038$Autism_website_venv___HOME_USE.coverage" NAME="Autism website venv - HOME USE Coverage Results" MODIFIED="1594791946334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Autism_website_assessment___JWL16038$Autism_website_venv___SCHOOL_USE.coverage" NAME="Autism website venv - SCHOOL USE Coverage Results" MODIFIED="1595461467589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
