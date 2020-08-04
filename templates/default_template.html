@@ -24,8 +24,12 @@
                 <a href="/caregivers">Our Caregivers</a>
                 <a href="/resources">Resources</a>
                 <a href="/contact">Contact us</a>
+                {% if not logged_in %}
                 <a href="/signup">Sign up</a>
                 <a href="/login">Login</a>
+                {% else %}
+                <a href="/logout">Logout</a>
+                {% endif %}
             </div>
             <div class="nav-bottom">
                 {% block navigation %}

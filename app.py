@@ -104,7 +104,6 @@ def render_loginpage():
         return redirect('/')
 
     if request.method == "POST":
-        print("Loggin in")
         email = request.form.get('email').strip().lower()
         password = request.form.get('password')
 
@@ -144,9 +143,15 @@ def render_loginpage():
 
     return render_template('login.html')
 
+@app.route('/logout', methods=["GET","POST"])
+def logout():
+    session.clear()
+    print("Successfully logged out")
+    return redirect('/')
+
+
 
 def is_logged_in():
-    print(session.get("email"))
     if session.get("email") is None:
         print("Not logged in")
         return False
