@@ -10,16 +10,12 @@ body{
 }
 
 nav{
-    text-align:right;
-    padding-top: 15px;
-    padding-bottom: 4px;
-    padding-right: 40px;
-    color:goldenrod;
+    text-align:center;
+    color: #696969;
     font-size:2rem;
-    text-space: 2rem;
 }
 hr{
-    color:deeppink;
+    color: #ff1493;
     height:2px;
 }
 
@@ -27,14 +23,26 @@ img{
     max-width: 100%;
 }
 
-a{
-    color:lightskyblue;
+a:link, a:visited{
     text-decoration: none;
-    border: 1px double green;
+    color: rgba(0, 0, 0, 0.8);
+    text-align:center;
+    padding: 4px 4px;
+    font-size: x-large;
+    background-color: #87dffa;
+    /*background-color:lightskyblue;*/
+    border: 1px;
+    /*border-radius: 7px 7px 7px 7px;*/
+    border-style: solid;
+    box-shadow: 1.2px 1.2px black;
 }
 
-a:visited{
-    color:darkkhaki;
+a:hover, a:active{
+    /*background-color:lightsalmon;*/
+    color: black;
+    background-color: lightskyblue;
+    text-decoration: underline;
+
 }
 
 
