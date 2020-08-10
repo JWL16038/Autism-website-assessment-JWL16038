@@ -7,7 +7,11 @@
 
 {% block navigation %}
     <hr>
-        <h3 style="text-align:left">Hi there! Please log in. The time is now xxxxx.</h3>
+        {% if not logged_in %}
+            <h3 style="text-align:center">Hi there! Please log in.</h3>
+        {% else %}
+            <h3 style="text-align:center">{{ "Hi {}! Welcome to Autism website 2020".format(session['firstname']) }}</h3>
+        {% endif %}
     <hr>
 {% endblock %}
 
@@ -18,5 +22,4 @@
 {% endblock %}
 
 {% block footer %}
-    <h3>Lorem ipsum</h3>
 {% endblock %}

@@ -27,7 +27,7 @@ def create_connection(db_file):
 
 @app.route('/')
 def render_homepage():
-    return render_template('home.html',logged_in=is_logged_in())
+    return render_template('home.html',logged_in=is_logged_in(), session = session)
 
 @app.route('/aboutus')
 def render_newspage():
@@ -42,7 +42,7 @@ def render_caregiverspage():
     caregivers_list = cur.fetchall()
     con.close()
 
-    return render_template('caregivers.html',caregivers_list= caregivers_list, logged_in=is_logged_in())
+    return render_template('caregivers.html',caregivers_list= caregivers_list, logged_in=is_logged_in, session = session)
 
 @app.route('/caregivers/book/<caregiverID>')
 def addCaregiver(caregiverID):
@@ -110,7 +110,7 @@ def render_caregiversignup():
     return render_template('signup_caregiver.html', logged_in=is_logged_in())
 
 @app.route('/signup/parent', methods=["GET","POST"])
-def render_caregiversignup():
+def render_parentsignup():
     if request.method == 'POST':
         fname = request.form.get('fname').strip().title()
         lname = request.form.get('lname').strip().title()
@@ -218,7 +218,6 @@ def render_logincaregiver():
         cur = con.cursor()
         cur.execute(query,(email,))
         user_data = cur.fetchall()
-        print(user_data)
         con.close()
 
         try:
@@ -237,13 +236,12 @@ def render_logincaregiver():
         session['email'] = email
         session['userID'] = userID
         session['firstname'] = firstname
-        print(session)
         return redirect('/')
 
     return render_template('login_caregiver.html')
 
 @app.route('/login/parent', methods=["GET","POST"])
-def render_logincaregiver():
+def render_loginparent():
     if is_logged_in():
         return redirect('/')
 
@@ -263,7 +261,6 @@ def render_logincaregiver():
         cur = con.cursor()
         cur.execute(query,(email,))
         user_data = cur.fetchall()
-        print(user_data)
         con.close()
 
         try:
@@ -282,7 +279,6 @@ def render_logincaregiver():
         session['email'] = email
         session['userID'] = userID
         session['firstname'] = firstname
-        print(session)
         return redirect('/')
 
     return render_template('login_caregiver.html')
@@ -308,7 +304,6 @@ def render_loginadmin():
         cur = con.cursor()
         cur.execute(query,(email,))
         user_data = cur.fetchall()
-        print(user_data)
         con.close()
 
         try:
@@ -327,7 +322,6 @@ def render_loginadmin():
         session['email'] = email
         session['userID'] = userID
         session['firstname'] = firstname
-        print(session)
         return redirect('/')
 
     return render_template('login_admin.html')

@@ -25,22 +25,21 @@ img{
 
 a:link, a:visited{
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.8);
     text-align:center;
+    color: rgba(0, 0, 0, 0.8);
     padding: 4px 4px;
     font-size: x-large;
+    font-weight: bold;
     background-color: #87dffa;
-    /*background-color:lightskyblue;*/
     border: 1px;
-    /*border-radius: 7px 7px 7px 7px;*/
+    border-radius: 7px 7px 7px 7px;
     border-style: solid;
     box-shadow: 1.2px 1.2px black;
 }
 
 a:hover, a:active{
-    /*background-color:lightsalmon;*/
+    background-color: #ecb9a4;
     color: black;
-    background-color: lightskyblue;
     text-decoration: underline;
 
 }
