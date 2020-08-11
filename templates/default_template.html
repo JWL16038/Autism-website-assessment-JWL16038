@@ -32,8 +32,15 @@
                 {% endif %}
             </div>
             <div class="nav-bottom">
-                {% block navigation %}
-                {% endblock %}
+                <hr>
+                <div class="welcomeText">
+                {% if not logged_in %}
+                    <p>Hi there! Please log in.</p>
+                {% else %}
+                    <p>{{ "Hi {}! Welcome to Autism website 2020".format(session['firstname']) }}</p>
+                {% endif %}
+                </div>
+    <hr>
             </div>
         </nav>
 

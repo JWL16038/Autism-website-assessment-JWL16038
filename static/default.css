@@ -48,6 +48,7 @@ a:hover, a:active{
 h1{
     color: green;
     font-weight: bolder;
+    text-align: center;
 }
 
 h2{
@@ -64,6 +65,9 @@ p{
 .welcomeText{
     text-align: center;
     font-size: medium;
+}
+.footer{
+    font-size: xx-small;
 }
 
 .caregivers_box{
@@ -106,4 +110,21 @@ p{
 .signupButtons{
     text-align: center;
     font-size: xx-large;
+}
+
+
+.form-group{
+    text-align: center;
+    line-height: 30px;
+}
+.form-label{
+    font-weight: bold;
+    font-size: large;
+}
+
+.button-group{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    letter-spacing: 30px;
 }

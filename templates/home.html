@@ -2,20 +2,9 @@
 {%block pageheading %}welcome{% endblock %}
 
 {% block header %}
-    <h1 style="text-align:center">Autism website project 2020</h1>
+    <h1>Autism website project 2020</h1>
 {% endblock %}
 
-{% block navigation %}
-    <hr>
-        <div class="welcomeText">
-        {% if not logged_in %}
-            <p>Hi there! Please log in.</p>
-        {% else %}
-            <p>{{ "Hi {}! Welcome to Autism website 2020".format(session['firstname']) }}</p>
-        {% endif %}
-        </div>
-    <hr>
-{% endblock %}
 
 
 {% block main %}

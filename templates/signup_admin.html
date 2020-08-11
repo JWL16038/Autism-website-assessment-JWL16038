@@ -1,45 +1,45 @@
-{% extends "default_template.html" %}
-{%block pageheading %}welcome{% endblock %}
+<!--{% extends "default_template.html" %}-->
+<!--{%block pageheading %}welcome{% endblock %}-->
 
-{% block header %}
-    <h1 style="text-align:center">Admin signup</h1>
-{% endblock %}
+<!--{% block header %}-->
+    <h1>Admin signup</h1>
+<!--{% endblock %}-->
 
-{% block navigation %}
-<hr>
-{% endblock %}
+<!--{% block navigation %}-->
+<!--<hr>-->
+<!--{% endblock %}-->
 
-{% block main %}
+<!--{% block main %}-->
 <form class="myform" method="post">
-    <div class="form-group" align="center">
+    <div class="form-group">
         <div class = "form-label">First name:</div>
         <div class = "form-element"><input id="fname" name="fname" type="text" required></div>
     </div>
 
-    <div class="form-group" align="center">
+    <div class="form-group">
         <div class = "form-label">Last name:</div>
         <div class = "form-element"><input id="lname" name="lname" type="text" required></div>
     </div>
 
-    <div class="form-group" align="center">
+    <div class="form-group">
         <div class = "form-label">Email:</div>
         <div class = "form-element"><input id="email" name="email" type="email" required></div>
     </div>
 
-    <div class="form-group" align="center">
+    <div class="form-group">
         <div class = "form-label">Password:</div>
         <div class = "form-element"><input id="password" name="password" type="password" required></div>
     </div>
 
-    <div class="form-group" align="center">
+    <div class="form-group">
         <div class = "form-label">Retype Password:</div>
         <div class = "form-element"><input id="password2" name="password2" type="password" required></div>
     </div>
 
-    <div class = "button-group" align="center">
+    <div class = "button-group">
         <input type="submit" value="Submit">
         <input type="reset" value="Reset">
     </div>
 </form>
 
-{% endblock %}
+<!--{% endblock %}-->
