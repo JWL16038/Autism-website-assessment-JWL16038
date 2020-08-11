@@ -7,17 +7,19 @@
 
 {% block navigation %}
     <hr>
+        <div class="welcomeText">
         {% if not logged_in %}
-            <h3 style="text-align:center">Hi there! Please log in.</h3>
+            <p>Hi there! Please log in.</p>
         {% else %}
-            <h3 style="text-align:center">{{ "Hi {}! Welcome to Autism website 2020".format(session['firstname']) }}</h3>
+            <p>{{ "Hi {}! Welcome to Autism website 2020".format(session['firstname']) }}</p>
         {% endif %}
+        </div>
     <hr>
 {% endblock %}
 
 
 {% block main %}
-    <h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem.</h4>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem.</p>
 <!--    <img src="../static/homepage/28207065531_4bc6388421_o.jpg" width="593.25" height="395.5" />-->
 {% endblock %}
 
