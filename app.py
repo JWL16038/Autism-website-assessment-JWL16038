@@ -4,6 +4,13 @@ from sqlite3 import Error
 from flask_bcrypt import Bcrypt
 import os
 
+from iso3166 import countries
+
+
+for i in countries:
+    country_name = list(i)[0]
+    country_code = list(i)[1]
+
 
 
 app = Flask(__name__)
