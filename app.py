@@ -7,9 +7,6 @@ import os
 from iso3166 import countries
 
 
-for i in countries:
-    country_name = list(i)[0]
-    country_code = list(i)[1]
 
 
 
@@ -78,6 +75,11 @@ def render_signuppage():
 
 @app.route('/signup/caregiver', methods=["GET","POST"])
 def render_caregiversignup():
+    for i in countries:
+        country_name = list(i)[0]
+        country_code = list(i)[1]
+
+
     if request.method == 'POST':
         fname = request.form.get('fname').strip().title()
         lname = request.form.get('lname').strip().title()
@@ -114,7 +116,7 @@ def render_caregiversignup():
         con.close()
         return redirect('/')
 
-    return render_template('signup_caregiver.html', logged_in=is_logged_in())
+    return render_template('signup_caregiver.html', logged_in=is_logged_in(), country_name=country_name,country_code=country_code)
 
 @app.route('/signup/parent', methods=["GET","POST"])
 def render_parentsignup():
