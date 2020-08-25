@@ -113,9 +113,13 @@ p{
 
 }
 
+
+
+
 .form-group{
     text-align: center;
     line-height: 30px;
+    font-size: medium;
 }
 .form-label{
     font-weight: bold;
@@ -124,7 +128,7 @@ p{
 .form-element input[type=text],input[type=email],input[type=password]{
     width: 130px;
     text-align: center;
-    background-color: powderblue;
+    background-color: lightgrey;
     border-radius: 4px;
     font-size: 16px;
 }
@@ -133,7 +137,7 @@ p{
 .form-element input[type=number]{
     width: 80px;
     text-align: center;
-    background-color: powderblue;
+    background-color: lightgrey;
     border-radius: 4px;
     font-size: 16px;
 
@@ -145,8 +149,36 @@ p{
 
 }
 
-.signupform-signin{
-    text-align: center;
+.signupform-signinbutton input[type=Submit],input[type=Reset]{
     border-radius: 8px;
-    color:#87dffa;
+    background-color:#87dffa;
 }
+
+.errorboxes-message{
+    text-align: center;
+    font-size:xx-large;
+}
+
+.errorsymbol{
+    margin-left: 15px;
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+    float: left;
+    font-size: 2.6rem;
+    line-height: 20px;
+}
+
+.errorboxes-text{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 30px;
+    width: 200px;
+    height:40px;
+    font-size: 3rem;
+    font-weight: bolder;
+    background-color: red;
+}
+

@@ -6,9 +6,12 @@ import os
 
 from iso3166 import countries
 
+country_nameslist = []
+country_codeslist = []
 
-
-
+for i in countries:
+    country_nameslist.append(list(i)[0])
+    country_codeslist.append(list(i)[1])
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
@@ -34,8 +37,16 @@ def render_homepage():
     return render_template('home.html',logged_in=is_logged_in(), session = session)
 
 @app.route('/aboutus')
-def render_newspage():
+def render_aboutus():
     return render_template('aboutus.html', logged_in=is_logged_in())
+
+@app.route('/resources')
+def render_newspage():
+    return render_template('resources.html', logged_in=is_logged_in())
+
+@app.route('/contact')
+def render_contactpage():
+    return render_template('contactus.html', logged_in=is_logged_in())
 
 @app.route('/caregivers')
 def render_caregiverspage():
@@ -68,17 +79,22 @@ def addCaregiver(caregiverID):
 
 @app.route('/signup')
 def render_signuppage():
+
+
     if is_logged_in():
         return redirect('/')
     else:
         return render_template('signup.html',logged_in=is_logged_in())
 
+
+
 @app.route('/signup/caregiver', methods=["GET","POST"])
 def render_caregiversignup():
-    for i in countries:
-        country_name = list(i)[0]
-        country_code = list(i)[1]
+    error = None
 
+    def redirect(error):
+        print(error)
+        return render_template('signup_caregiver.html', logged_in=is_logged_in, error=error,country_name=country_nameslist)
 
     if request.method == 'POST':
         fname = request.form.get('fname').strip().title()
@@ -88,11 +104,7 @@ def render_caregiversignup():
         password2 = request.form.get('password2')
 
         if len(password) < 8:
-            print("password needs to be at least 8 characters long")
-            return redirect('/signup/caregiver')
-        elif len(password) > 20:
-            print("password cannot be more than 20 characters long")
-            return redirect('/signup/caregiver')
+            error = "password needs to be at least 8 characters long"
 
         hashed_password = bcrypt.generate_password_hash(password)
 
@@ -105,98 +117,28 @@ def render_caregiversignup():
                 cur.execute(query, (fname, lname, email, hashed_password))
                 print("Passwords match")
             else:
-                print("Passwords dont't match")
-                return redirect('/signup/caregiver')
+                error = "Passwords don't match"
 
         except sqlite3.IntegrityError:
-            print("Email is already taken")
-            return redirect('/signup/caregiver')
+            error = "Email is already taken"
 
-        con.commit()
-        con.close()
-        return redirect('/')
+        if error:
+            print("error")
+            con.close()
+            redirect(error)
+        else:
+            print("no error")
+            con.commit()
+            con.close()
+            return redirect('/')
+    print(is_logged_in())
+    return render_template('signup_caregiver.html', logged_in=is_logged_in, error=error, country_name=country_nameslist)
 
-    return render_template('signup_caregiver.html', logged_in=is_logged_in(), country_name=country_name,country_code=country_code)
 
-@app.route('/signup/parent', methods=["GET","POST"])
-def render_parentsignup():
-    if request.method == 'POST':
-        fname = request.form.get('fname').strip().title()
-        lname = request.form.get('lname').strip().title()
-        email = request.form.get('email').strip().lower()
-        password = request.form.get('password')
-        password2 = request.form.get('password2')
 
-        if len(password) < 8:
-            print("password needs to be at least 8 characters long")
-            return redirect('/signup/caregiver')
-        elif len(password) > 20:
-            print("password cannot be more than 20 characters long")
-            return redirect('/signup/caregiver')
 
-        hashed_password = bcrypt.generate_password_hash(password)
 
-        con = create_connection(DB_NAME)
-        query = "INSERT INTO parentAccounts(SortID,Firstname,Lastname,email,password) VALUES(NULL,?,?,?,?)"
-        cur = con.cursor()
 
-        try:
-            if bcrypt.check_password_hash(hashed_password, password2):
-                cur.execute(query, (fname, lname, email, hashed_password))
-                print("Passwords match")
-            else:
-                print("Passwords dont't match")
-                return redirect('/signup/caregiver')
-
-        except sqlite3.IntegrityError:
-            print("Email is already taken")
-            return redirect('/signup/caregiver')
-
-        con.commit()
-        con.close()
-        return redirect('/')
-
-    return render_template('signup_caregiver.html', logged_in=is_logged_in())
-
-@app.route('/signup/admin', methods=["GET","POST"])
-def render_adminsignup():
-    if request.method == 'POST':
-        fname = request.form.get('fname').strip().title()
-        lname = request.form.get('lname').strip().title()
-        email = request.form.get('email').strip().lower()
-        password = request.form.get('password')
-        password2 = request.form.get('password2')
-
-        if len(password) < 8:
-            print("password needs to be at least 8 characters long")
-            return redirect('/signup')
-        elif len(password) > 20:
-            print("password cannot be more than 20 characters long")
-            return redirect('/signup')
-
-        hashed_password = bcrypt.generate_password_hash(password)
-
-        con = create_connection(DB_NAME)
-        query = "INSERT INTO AdminAccounts(SortID,Firstname,Lastname,email,password) VALUES(NULL,?,?,?,?)"
-        cur = con.cursor()
-
-        try:
-            if bcrypt.check_password_hash(hashed_password, password2):
-                cur.execute(query, (fname, lname, email, hashed_password))
-                print("Passwords match")
-            else:
-                print("Passwords dont't match")
-                return redirect('/signup')
-
-        except sqlite3.IntegrityError:
-            print("Email is already taken")
-            return redirect('/signup')
-
-        con.commit()
-        con.close()
-        return redirect('/')
-
-    return render_template('signup_admin.html', logged_in=is_logged_in())
 
 @app.route('/login')
 def render_loginpage():
@@ -208,6 +150,11 @@ def render_loginpage():
 
 @app.route('/login/caregiver', methods=["GET","POST"])
 def render_logincaregiver():
+
+    def redirect(error):
+        print(error)
+        return render_template('login_caregiver.html', logged_in=is_logged_in, error=error,)
+
     if is_logged_in():
         return redirect('/')
 
@@ -216,11 +163,8 @@ def render_logincaregiver():
         password = request.form.get('password')
 
         if len(password) < 8:
-            print("password needs to be at least 8 characters long")
-            return redirect('/login')
-        elif len(password) > 20:
-            print("password cannot be more than 20 characters long")
-            return redirect('/login')
+            error ="password needs to be at least 8 characters long"
+
 
         con = create_connection(DB_NAME)
         query = "SELECT SortID,Firstname,password FROM caregiverAccounts WHERE email = ?"
@@ -236,18 +180,23 @@ def render_logincaregiver():
             if bcrypt.check_password_hash(hashed_password, password):
                 print("Passwords match")
             else:
-                print("Passwords dont't match")
-                return redirect('/login')
+                error = "Passwords dont't match"
         except IndexError:
-            print("Email or password is incorrect")
+            error = "Email or password is incorrect"
             return redirect('/login')
 
-        session['email'] = email
-        session['userID'] = userID
-        session['firstname'] = firstname
-        return redirect('/')
+        if error:
+            print("error")
+            redirect(error)
+        else:
+            print("no error")
+            session['email'] = email
+            session['userID'] = userID
+            session['firstname'] = firstname
+            return redirect('/')
 
-    return render_template('login_caregiver.html')
+    return render_template('login_caregiver.html', logged_in=is_logged_in, error=error, )
+
 
 @app.route('/login/parent', methods=["GET","POST"])
 def render_loginparent():

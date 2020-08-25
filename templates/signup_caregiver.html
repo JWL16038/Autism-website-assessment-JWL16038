@@ -6,17 +6,22 @@
 {% endblock %}
 
 {% block navigation %}
-<hr>
 {% endblock %}
 
 {% block main %}
 
-<p>Please correct these errors:</p>
-<div class="errorboxes">
-  <span class="closebtn">&times;</span>
-  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-</div>
+    {% if error %}
+    <div class="error">
+        <p class="errorboxes-message">Please correct these errors:</p>
+        <div class="errorboxes-text">
+              <span class="errorsymbol" >&#10006;</span>
+<!--              <span class="errorsymbol" >&#10060;</span>-->
+<!--              <span class="errorsymbol" >&#33;</span>-->
+             <p>{{ error }}</p>
+        </div>
 
+    </div>
+    {% endif %}
 
 <form class="myform" method="post">
     <div class="form-group">
@@ -48,12 +53,12 @@
     </div>
 
     <div class="form-group">
-        <div class = "form-label">Country:</div>
+        <div class = "form-label">Country of origin:</div>
             <div class="form-droplist">
                 <select name="country" id="country">
-                    <option value="NZ">New Zealand</option>
-                    <option value="AUS">Australia</option>
-                    <option value="USA">United States</option>
+                    {% for countryname in country_name %}
+                    <option value="XXX">{{ countryname }}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div>
@@ -94,8 +99,8 @@
 
     <div class="form-group">
         <p>Already have an account?</p>
-        <div class="signupform-signin">
-            <button>Signin</button>
+        <div class="signupform-signinbutton">
+            <a href="/signin">Signin</a>
         </div>
     </div>
 </form>
