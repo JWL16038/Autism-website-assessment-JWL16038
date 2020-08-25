@@ -57,7 +57,7 @@ def render_caregiverspage():
     caregivers_list = cur.fetchall()
     con.close()
 
-    return render_template('caregivers.html',caregivers_list= caregivers_list, logged_in=is_logged_in, session = session)
+    return render_template('caregivers.html',caregivers_list= caregivers_list, logged_in=is_logged_in(), session = session)
 
 @app.route('/caregivers/book/<caregiverID>')
 def addCaregiver(caregiverID):
@@ -92,9 +92,8 @@ def render_signuppage():
 def render_caregiversignup():
     error = None
 
-    def redirect(error):
-        print(error)
-        return render_template('signup_caregiver.html', logged_in=is_logged_in, error=error,country_name=country_nameslist)
+    def sendError(error):
+        return render_template('signup_caregiver.html', logged_in=is_logged_in(), error=error,country_name=country_nameslist)
 
     if request.method == 'POST':
         fname = request.form.get('fname').strip().title()
@@ -125,16 +124,16 @@ def render_caregiversignup():
         if error:
             print("error")
             con.close()
-            redirect(error)
+            sendError(error)
         else:
             print("no error")
             con.commit()
             con.close()
             return redirect('/')
-    print(is_logged_in())
-    return render_template('signup_caregiver.html', logged_in=is_logged_in, error=error, country_name=country_nameslist)
+    return render_template('signup_caregiver.html', logged_in=is_logged_in(), error=error, country_name=country_nameslist)
 
 
+@app.route('/signup/caregiver', methods=["GET","POST"])
 
 
 
@@ -150,10 +149,10 @@ def render_loginpage():
 
 @app.route('/login/caregiver', methods=["GET","POST"])
 def render_logincaregiver():
+    error = None
 
-    def redirect(error):
-        print(error)
-        return render_template('login_caregiver.html', logged_in=is_logged_in, error=error,)
+    def sendError(error):
+        return render_template('login_caregiver.html', logged_in=is_logged_in(), error=error,)
 
     if is_logged_in():
         return redirect('/')
@@ -163,7 +162,7 @@ def render_logincaregiver():
         password = request.form.get('password')
 
         if len(password) < 8:
-            error ="password needs to be at least 8 characters long"
+            error = "password needs to be at least 8 characters long"
 
 
         con = create_connection(DB_NAME)
@@ -183,11 +182,10 @@ def render_logincaregiver():
                 error = "Passwords dont't match"
         except IndexError:
             error = "Email or password is incorrect"
-            return redirect('/login')
 
         if error:
             print("error")
-            redirect(error)
+            sendError(error)
         else:
             print("no error")
             session['email'] = email
@@ -195,94 +193,9 @@ def render_logincaregiver():
             session['firstname'] = firstname
             return redirect('/')
 
-    return render_template('login_caregiver.html', logged_in=is_logged_in, error=error, )
+    return render_template('login_caregiver.html', logged_in=is_logged_in(), error=error, )
 
 
-@app.route('/login/parent', methods=["GET","POST"])
-def render_loginparent():
-    if is_logged_in():
-        return redirect('/')
-
-    if request.method == "POST":
-        email = request.form.get('email').strip().lower()
-        password = request.form.get('password')
-
-        if len(password) < 8:
-            print("password needs to be at least 8 characters long")
-            return redirect('/login')
-        elif len(password) > 20:
-            print("password cannot be more than 20 characters long")
-            return redirect('/login')
-
-        con = create_connection(DB_NAME)
-        query = "SELECT SortID,Firstname,password FROM parentAccounts WHERE email = ?"
-        cur = con.cursor()
-        cur.execute(query,(email,))
-        user_data = cur.fetchall()
-        con.close()
-
-        try:
-            userID = user_data[0][0]
-            firstname = user_data[0][1]
-            hashed_password = user_data[0][2]
-            if bcrypt.check_password_hash(hashed_password, password):
-                print("Passwords match")
-            else:
-                print("Passwords dont't match")
-                return redirect('/login')
-        except IndexError:
-            print("Email or password is incorrect")
-            return redirect('/login')
-
-        session['email'] = email
-        session['userID'] = userID
-        session['firstname'] = firstname
-        return redirect('/')
-
-    return render_template('login_caregiver.html')
-
-@app.route('/login/admin', methods=["GET","POST"])
-def render_loginadmin():
-    if is_logged_in():
-        return redirect('/')
-
-    if request.method == "POST":
-        email = request.form.get('email').strip().lower()
-        password = request.form.get('password')
-
-        if len(password) < 8:
-            print("password needs to be at least 8 characters long")
-            return redirect('/login')
-        elif len(password) > 20:
-            print("password cannot be more than 20 characters long")
-            return redirect('/login')
-
-        con = create_connection(DB_NAME)
-        query = "SELECT SortID,Firstname,password FROM AdminAccounts WHERE email = ?"
-        cur = con.cursor()
-        cur.execute(query,(email,))
-        user_data = cur.fetchall()
-        con.close()
-
-        try:
-            userID = user_data[0][0]
-            firstname = user_data[0][1]
-            hashed_password = user_data[0][2]
-            if bcrypt.check_password_hash(hashed_password, password):
-                print("Passwords match")
-            else:
-                print("Passwords dont't match")
-                return redirect('/login')
-        except IndexError:
-            print("Email or password is incorrect")
-            return redirect('/login')
-
-        session['email'] = email
-        session['userID'] = userID
-        session['firstname'] = firstname
-        return redirect('/')
-
-    return render_template('login_admin.html')
 
 
 

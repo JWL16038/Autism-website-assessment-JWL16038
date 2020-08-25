@@ -1,5 +1,5 @@
 {% extends "default_template.html" %}
-{%block pageheading %}welcome{% endblock %}
+{%block pageheading %}{% endblock %}
 
 {% block header %}
     <h1>Caregiver signup</h1>
@@ -25,36 +25,36 @@
 
 <form class="myform" method="post">
     <div class="form-group">
-        <div class = "form-label">First name:</div>
         <div class = "form-element">
+                <label for="fname" class="form-label">First Name</label>
                 <input id="fname" name="fname" type="text" required>
         </div>
     </div>
 
     <div class="form-group">
-        <div class = "form-label">Last name:</div>
         <div class = "form-element">
+                <label for="lname" class="form-label">Last Name</label>
                 <input id="lname" name="lname" type="text" required>
         </div>
     </div>
 
     <div class="form-group">
-        <div class = "form-label">Email:</div>
         <div class = "form-element">
+                <label for="email" class="form-label">Email</label>
                 <input id="email" name="email" type="email" required>
         </div>
     </div>
 
     <div class="form-group">
-        <div class = "form-label">Age:</div>
         <div class = "form-element">
+                <label for="age" class="form-label">Current age</label>
                 <input id="age" name="age" type="number" min="18" max="99" required>
-        </div>
+       </div>
     </div>
 
     <div class="form-group">
-        <div class = "form-label">Country of origin:</div>
             <div class="form-droplist">
+                <label for="country" class="form-label">Country of origin</label>
                 <select name="country" id="country">
                     {% for countryname in country_name %}
                     <option value="XXX">{{ countryname }}</option>
@@ -64,8 +64,8 @@
         </div>
 
     <div class="form-group">
-        <div class = "form-label">Ethnicity:</div>
             <div class="form-droplist">
+                <label for="ethnicity" class="form-label">Ethnicity</label>
                 <select name="ethnicity" id="ethnicity">
                     <option value="European">European</option>
                     <option value="Māori">Māori</option>
@@ -75,20 +75,20 @@
                     <option value="African">African</option>
                     <option value="Other">Other</option>
                 </select>
-            </div>
+         </div>
         </div>
 
     <div class="form-group">
-        <div class = "form-label">Password:</div>
         <div class = "form-element">
-                <input id="password" name="password" type="password" required>
-        </div>
+            <label for="password" class="form-label">Password</label>
+            <input id="password" name="password" type="password" required>
+       </div>
     </div>
 
     <div class="form-group">
-        <div class = "form-label">Retype Password:</div>
         <div class = "form-element">
-                <input id="password2" name="password2" type="password" required>
+            <label for="password2" class="form-label">Retype your password (for verification)</label>
+            <input id="password2" name="password2" type="password" required>
         </div>
     </div>
 
