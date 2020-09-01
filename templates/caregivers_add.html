@@ -1,0 +1,65 @@
+{% extends "default_template.html" %}
+{%block pageheading %}welcome{% endblock %}
+
+{% block header %}
+    <h1 style="text-align:center">Lorem ipsum </h1>
+{% endblock %}
+
+
+{% block main %}
+
+{% if error %}
+<div class="error">
+    <p class="errorboxes-message">Please correct these errors:</p>
+        <div class="errorboxes-text">
+        <span class="errorsymbol" >&#10060;</span>
+     <p>{{ error }}</p>
+    </div>
+</div>
+{% endif %}
+
+<form class="myform" method="post">
+    <div class="form-group">
+        <div class = "form-element">
+                <label for="description" class="form-label">Description of yourself</label>
+                <textarea id="description" name="description" rows="4" cols="50">
+                </textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class = "form-element">
+                <label for="experience" class="form-label">Experience</label>
+                <textarea id="experience" name="experience" rows="4" cols="50">
+                </textarea>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+            <div class="form-droplist">
+                <label for="city" class="form-label">City</label>
+                <select name="city" id="city">
+                    <option value="Auckland">Auckland</option>
+                    <option value="Wellington">Wellington</option>
+                    <option value="Christchurch">Christchurch</option>
+                </select>
+         </div>
+        </div>
+
+    <div class="form-group">
+        <form action="/action_page.php">
+            <label for="profileImg" class="form-label">Profile image (image size must be 1024 by 1024 pixels)</label>
+          <input type="file" id="profileImg" name="ProfileImage">
+        </form>
+    </div>
+
+
+    <div class = "form-group">
+        <input type="Submit" value="Submit">
+        <input type="Reset" value="Reset">
+    </div>
+
+</form>
+
+{% endblock %}

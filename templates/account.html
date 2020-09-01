@@ -1,0 +1,14 @@
+{% extends "default_template.html" %}
+{%block pageheading %}welcome{% endblock %}
+
+{% block header %}
+    <h1>About Us</h1>
+{% endblock %}
+
+{% block main %}
+<h2>Welcome {{ session['firstname'] }}!</h2>
+
+<a href="/caregivers/add">Add me to caregivers list</a>
+
+
+{% endblock %}

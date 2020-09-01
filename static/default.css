@@ -23,7 +23,7 @@ img{
     max-width: 100%;
 }
 
-a:link, a:visited{
+nav a:link, nav a:visited{
     text-decoration: none;
     text-align:center;
     color: rgba(0, 0, 0, 0.8);
@@ -37,13 +37,15 @@ a:link, a:visited{
     box-shadow: 1.2px 1.2px black;
 }
 
-a:hover, a:active{
+nav a:hover, nav a:active{
     background-color: #ecb9a4;
     color: black;
     text-decoration: underline;
 
 }
-
+.resource-links a{
+    background-color: hotpink;
+}
 
 h1{
     color: green;
@@ -168,7 +170,7 @@ display: flex;
     color: black;
     font-weight: bold;
     float: left;
-    font-size: 2.6rem;
+    font-size: 2.3rem;
     line-height: 20px;
 }
 
@@ -179,7 +181,6 @@ display: flex;
     margin-top: auto;
     margin-bottom: 30px;
     width: 200px;
-    height:40px;
     font-size: 3rem;
     font-weight: bolder;
     background-color: red;

@@ -51,13 +51,28 @@ def render_contactpage():
 @app.route('/caregivers')
 def render_caregiverspage():
     con = create_connection(DB_NAME)
-    query = "SELECT SortID,Name,Image,Age,Location,Experience from caregivers"
+    query = "SELECT SortID,Name,Image,Age,Location,Experience from caregivers_page"
     cur = con.cursor()
     cur.execute(query)
     caregivers_list = cur.fetchall()
     con.close()
-
     return render_template('caregivers.html',caregivers_list= caregivers_list, logged_in=is_logged_in(), session = session)
+
+@app.route('/caregivers/add/')
+def render_caregiversaddpage():
+
+    if not is_logged_in():
+        return redirect('/')
+
+    if request.method == "POST":
+        description = request.form.get('description')
+        experience = request.form.get('experience')
+        city = request.form.get('city')
+        profileImage = request.form.get('profileImg')
+        print(description,experience,city,profileImage)
+        return redirect('/')
+
+    return render_template('caregivers_add.html', logged_in=is_logged_in(), session = session)
 
 @app.route('/caregivers/book/<caregiverID>')
 def addCaregiver(caregiverID):
@@ -67,33 +82,26 @@ def addCaregiver(caregiverID):
 
 
 
+@app.route('/account', methods=["GET","POST"])
+def render_accountpage():
 
-
-
-
-
-
-
-
+    return render_template('account.html', logged_in=is_logged_in(), session=session)
 
 
 @app.route('/signup')
 def render_signuppage():
-
 
     if is_logged_in():
         return redirect('/')
     else:
         return render_template('signup.html',logged_in=is_logged_in())
 
-
-
 @app.route('/signup/caregiver', methods=["GET","POST"])
 def render_caregiversignup():
     error = None
 
     def sendError(error):
-        return render_template('signup_caregiver.html', logged_in=is_logged_in(), error=error,country_name=country_nameslist)
+        return render_template('signup_caregiver.html', error=error)
 
     if request.method == 'POST':
         fname = request.form.get('fname').strip().title()
@@ -130,14 +138,8 @@ def render_caregiversignup():
             con.commit()
             con.close()
             return redirect('/')
+
     return render_template('signup_caregiver.html', logged_in=is_logged_in(), error=error, country_name=country_nameslist)
-
-
-@app.route('/signup/caregiver', methods=["GET","POST"])
-
-
-
-
 
 @app.route('/login')
 def render_loginpage():
@@ -152,7 +154,7 @@ def render_logincaregiver():
     error = None
 
     def sendError(error):
-        return render_template('login_caregiver.html', logged_in=is_logged_in(), error=error,)
+        return render_template('login_caregiver.html',  error=error,)
 
     if is_logged_in():
         return redirect('/')
@@ -179,7 +181,7 @@ def render_logincaregiver():
             if bcrypt.check_password_hash(hashed_password, password):
                 print("Passwords match")
             else:
-                error = "Passwords dont't match"
+                error = "Incorrect password"
         except IndexError:
             error = "Email or password is incorrect"
 
@@ -196,15 +198,11 @@ def render_logincaregiver():
     return render_template('login_caregiver.html', logged_in=is_logged_in(), error=error, )
 
 
-
-
-
 @app.route('/logout', methods=["GET","POST"])
 def logout():
     session.clear()
     print("Successfully logged out")
     return redirect('/')
-
 
 
 def is_logged_in():
