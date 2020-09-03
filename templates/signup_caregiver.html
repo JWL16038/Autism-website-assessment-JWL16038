@@ -44,7 +44,7 @@
 
     <div class="form-group">
         <div class = "form-element">
-                <label for="age" class="form-label">Current age</label>
+                <label for="age" class="form-label">Current age (you must be at least 18 years old)</label>
                 <input id="age" name="age" type="number" min="18" max="99" required>
        </div>
     </div>
@@ -54,7 +54,7 @@
                 <label for="country" class="form-label">Country of origin</label>
                 <select name="country" id="country">
                     {% for countryname in country_name %}
-                    <option value="XXX">{{ countryname }}</option>
+                    <option>{{ countryname }}</option>
                     {% endfor %}
                 </select>
             </div>
