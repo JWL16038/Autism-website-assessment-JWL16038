@@ -5,28 +5,24 @@
     <h1 style="text-align:center">Lorem ipsum </h1>
 {% endblock %}
 
-{% block footer %}
-    <h3>Hi there! Please log in. The time is now xxxxx.</h3>
-{% endblock %}
-
 {% block main %}
     <div class="caregivers">
          {% for caregivers in caregivers_list %}
          <div class="caregivers_box">
              <div class="caregivers_box_name">
-                <h3>{{caregivers[1]}}</h3>
+                <p>{{caregivers[2] + " " + caregivers[3] }}</p>
              </div>
 
             <div class="caregivers_box_image">
-                <img src="static/caregivers/images/{{ caregivers[2] }}.jpg">
+                <img src="static/caregivers/images/{{ caregivers[5] }}.jpg" alt="{{ caregivers[2] + caregivers[3] }}">
              </div>
              
             <div class="caregivers_box_desc">
-                <h3>Age: {{caregivers[3]}}</h3>
-                <h3>City: {{caregivers[4]}}</h3>
-                <h3>Description: {{caregivers[5]}}</h3>
-                <h3>Experience: {{caregivers[6]}}</h3>
-                <a href="caregivers/book/{{ caregivers[0] }}">Book {{ caregivers[1]}} as a caregiver</a>
+                <p>Gender: {{caregivers[4]}}</p>
+                <p>Age: {{caregivers[6]}}</p>
+                <p>City: {{caregivers[7]}}</p>
+                <p>Experience: {{caregivers[8]}}</p>
+                <a href="caregivers/book/{{ caregivers[0] }}">Book {{ caregivers[2]}} as a caregiver</a>
              </div>
 
          </div>

@@ -73,7 +73,7 @@ p{
 }
 
 .caregivers_box{
-    background-color: steelblue;
+    background-color: darkseagreen;
     width:32%;
     text-align: center;
     color: white;
@@ -84,8 +84,10 @@ p{
     margin-left:10px;
     float: left;
 }
-.caregivers_box_name h3{
-    font-size: 40px;
+.caregivers_box_name p{
+    font-size: 50px;
+    color: white;
+
 }
 
 .caregivers_box_image{
@@ -100,6 +102,7 @@ p{
 
 .caregivers_box_desc{
     padding: 0.5rem;
+    color: white;
 }
 .caregivers_box_desc a{
     font-size: xx-large;
