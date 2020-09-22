@@ -2,7 +2,7 @@
 {%block pageheading %}welcome{% endblock %}
 
 {% block header %}
-    <h1 style="text-align:center">Lorem ipsum </h1>
+    <h1>Lorem ipsum </h1>
 {% endblock %}
 
 {% block main %}
@@ -22,7 +22,9 @@
                 <p>Age: {{caregivers[6]}}</p>
                 <p>City: {{caregivers[7]}}</p>
                 <p>Experience: {{caregivers[8]}}</p>
+                {% if logged_in %}
                 <a href="caregivers/book/{{ caregivers[0] }}">Book {{ caregivers[2]}} as a caregiver</a>
+                {% endif %}
              </div>
 
          </div>

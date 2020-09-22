@@ -8,7 +8,68 @@
 {% block main %}
 <h2>Welcome {{ session['firstname'] }}!</h2>
 
+{% if usergroup == 1 %}
 <a href="/caregivers/add">Add me to caregivers list</a>
 
+    {%if caregiverdata %}
+        <table>
+        <colgroup>
+        <col style="width: 230px">
+        <col style="width: 90px">
+        <col style="width: 90px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Matched parent</th>
+            <th>Parent's prefered date</th>
+            <th>Parent's prefered time</th>
+            <th>Parent's additional comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ caregiverdata[0] + " " + caregiverdata[1]}}</td>
+            <td>{{ caregiverdata[2] }}</td>
+            <td>{{ caregiverdata[3] }}</td>
+            <td>{{ caregiverdata[4] }}</td>
+          </tr>
+        </tbody>
+        </table>
+    {% else %}
+        <p>No parents have book you yet.</p>
+    {% endif %}
+
+{% elif usergroup == 2 %}
+
+    {%if parentdata %}
+        <table>
+        <colgroup>
+        <col style="width: 230px">
+        <col style="width: 90px">
+        <col style="width: 90px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Your matched caregiver</th>
+            <th>Your prefered date</th>
+            <th>Your prefered time</th>
+            <th>Your additional comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ parentdata[0] + " " + parentdata[1]}}</td>
+            <td>{{ parentdata[2] }}</td>
+            <td>{{ parentdata[3] }}</td>
+            <td>{{ parentdata[4] }}</td>
+          </tr>
+        </tbody>
+        </table>
+    {% else %}
+        <p>No caregivers have book you yet.</p>
+    {% endif %}
+
+
+{% endif %}
 
 {% endblock %}

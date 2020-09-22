@@ -1,16 +1,117 @@
 {% extends "default_template.html" %}
-{%block pageheading %}welcome{% endblock %}
+{%block pageheading %}{% endblock %}
 
 {% block header %}
-    <h1 style="text-align:center">Parent signup</h1>
+    <h1>Parent signup</h1>
 {% endblock %}
 
-{% block footer %}
-    <h3>Hi there! Please log in. The time is now xxxxx.</h3>
+{% block navigation %}
 {% endblock %}
 
 {% block main %}
-<h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. </h4>
 
-<h4> In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula. Donec hendrerit, felis et imperdiet euismod, purus ipsum pretium metus, in lacinia nulla nisl eget sapien.</h4>
+{% if error %}
+<div class="error">
+    <p class="errorboxes-message">Please correct these errors:</p>
+        <div class="errorboxes-text">
+        <span class="errorsymbol" >&#10060;</span>
+         <p>{{ error }}</p>
+    </div>
+</div>
+{% endif %}
+
+<form class="myform" method="post">
+    <div class="form-group">
+        <div class = "form-element">
+                <label for="fname" class="form-label">First Name</label>
+                <input id="fname" name="fname" type="text" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class = "form-element">
+                <label for="lname" class="form-label">Last Name</label>
+                <input id="lname" name="lname" type="text" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class = "form-element">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="email" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class = "form-element">
+                <label for="age" class="form-label">Current age (you must be at least 18 years old)</label>
+                <input id="age" name="age" type="number" min="18" max="99" required>
+       </div>
+    </div>
+
+  <div class="form-group">
+            <div class="form-droplist">
+                <label for="gender" class="form-label">Gender</label>
+                <select name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+         </div>
+        </div>
+
+    <div class="form-group">
+            <div class="form-droplist">
+                <label for="country" class="form-label">Country of origin</label>
+                <select name="country" id="country">
+                    {% for countryname in country_name %}
+                    <option>{{ countryname }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+    <div class="form-group">
+            <div class="form-droplist">
+                <label for="ethnicity" class="form-label">Ethnicity</label>
+                <select name="ethnicity" id="ethnicity">
+                    <option value="NZEuropean">New Zealand European</option>
+                    <option value="Māori">Māori</option>
+                    <option value="Pacific">Pacific</option>
+                    <option value="Middle_Eastern">Middle Eastern</option>
+                    <option value="Latin">Latin American</option>
+                    <option value="African">African</option>
+                    <option value="Other">Other</option>
+                </select>
+         </div>
+        </div>
+
+
+    <div class="form-group">
+        <div class = "form-element">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" name="password" type="password" required>
+       </div>
+    </div>
+
+    <div class="form-group">
+        <div class = "form-element">
+            <label for="password2" class="form-label">Retype your password (for verification)</label>
+            <input id="password2" name="password2" type="password" required>
+        </div>
+    </div>
+
+    <div class = "form-group">
+        <input type="Submit" value="Submit">
+        <input type="Reset" value="Reset">
+    </div>
+
+    <div class="form-group">
+        <p>Already have an account?</p>
+        <div class="signupform-signinbutton">
+            <a href="/login">Login</a>
+        </div>
+    </div>
+</form>
+
 {% endblock %}
