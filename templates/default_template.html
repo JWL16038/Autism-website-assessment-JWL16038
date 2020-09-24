@@ -27,7 +27,7 @@
                 <a href="/signup">Sign up</a>&#9702;
                 <a href="/login">Login</a>
                 {% else %}
-                    {% if session['parentmatched'] == True %}
+                    {% if session['parentmatched'] == True or session['caregivermatched'] == True %}
                         <a href="/account">(!!)My Account</a>&#9702;
                     {% else %}
                         <a href="/account">My Account</a>&#9702;

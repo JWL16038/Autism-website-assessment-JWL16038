@@ -34,19 +34,19 @@ def create_connection(db_file):
 
 @app.route('/')
 def render_homepage():
-    return render_template('home.html',logged_in=is_logged_in(), session = session)
+    return render_template('home.html',logged_in=is_logged_in(), session=session)
 
 @app.route('/aboutus')
 def render_aboutus():
-    return render_template('aboutus.html', logged_in=is_logged_in())
+    return render_template('aboutus.html', logged_in=is_logged_in(), session=session)
 
 @app.route('/resources')
 def render_newspage():
-    return render_template('resources.html', logged_in=is_logged_in())
+    return render_template('resources.html', logged_in=is_logged_in(), session=session)
 
 @app.route('/contact')
 def render_contactpage():
-    return render_template('contactus.html', logged_in=is_logged_in())
+    return render_template('contactus.html', logged_in=is_logged_in(), session=session)
 
 @app.route('/caregivers')
 def render_caregiverspage():
@@ -149,11 +149,7 @@ def bookCaregiver():
         contactdate = request.form.get('contactdate')
         contacttime = request.form.get('contacttime')
         userID = session['userID']
-        fname = session['firstname']
-        lname = session['lastname']
         caregiverID = session['caregiverID']
-        caregiver_fname = session['caregiver_fname']
-        caregiver_lname = session['caregiver_lname']
         comment_count = word_count(comments)
         if comment_count <= 20:
             error = "length for comments too short"
@@ -164,7 +160,7 @@ def bookCaregiver():
             error = "Contact time is empty"
 
         con = create_connection(DB_NAME)
-        query = "INSERT INTO parent_caregivers(SortID,ParentID,CaregiverID,Parent_Fname,Parent_Lname,Caregiver_Fname,Caregiver_Lname,PreferedDate,PreferedTime,Comments) VALUES(NULL,?,?,?,?,?,?,?,?,?)"
+        query = "INSERT INTO parent_caregivers(SortID,ParentID,CaregiverID,PreferedDate,PreferedTime,Comments) VALUES(NULL,?,?,?,?,?)"
         cur = con.cursor()
 
         if error:
@@ -172,7 +168,7 @@ def bookCaregiver():
             con.close()
             sendError(error)
         else:
-            cur.execute(query, (userID,caregiverID,fname,lname,caregiver_fname,caregiver_lname,contactdate,contacttime,comments))
+            cur.execute(query, (userID,caregiverID,contactdate,contacttime,comments))
             print("no error")
             con.commit()
             con.close()
@@ -192,18 +188,13 @@ def addCaregiver(caregiver_pageID):
         usergroup = session['usergroup']
         if usergroup != 1:
             con = create_connection(DB_NAME)
-            query = "SELECT SortID,AccountID,FirstName,LastName FROM caregivers_page WHERE SortID = ?"
+            query = "SELECT SortID,AccountID FROM caregivers_page WHERE SortID = ?"
             cur = con.cursor()
             cur.execute(query, (caregiver_pageID,))
             user_data = cur.fetchall()
             con.close()
             caregiverID = user_data[0][1]
-            caregiver_firstname = user_data[0][2]
-            caregiver_lastname = user_data[0][3]
-            print(caregiverID,caregiver_firstname,caregiver_lastname)
             session['caregiverID'] = caregiverID
-            session['caregiver_fname'] = caregiver_firstname
-            session['caregiver_lname'] = caregiver_lastname
             return redirect('/caregivers/book/')
         else:
             return redirect(request.referrer) #already a caregiver. Caregivers can't book other caregivers. Only parents can book caregivers.
@@ -244,7 +235,7 @@ def render_accountpage():
             else:
                 print("no parent matched yet")
                 return render_template('account.html', logged_in=is_logged_in(), session=session, usergroup=usergroup)
-        if usergroup == 2: #parent
+        elif usergroup == 2: #parent
             caregivermatched = session['caregivermatched']
             if caregivermatched == True:
                 parentdata = []
@@ -544,13 +535,6 @@ def is_logged_in():
         print("Logged in")
         return True
 
-def get_notification():
-    if session.get("email") is None:
-        print("Not logged in")
-        return False
-    else:
-        print("Logged in")
-        return True
 
 
 
